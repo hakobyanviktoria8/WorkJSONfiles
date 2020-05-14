@@ -1,4 +1,4 @@
-var countries = {
+const countries = {
   "Global": {
     "NewConfirmed": 85420,
     "TotalConfirmed": 4333463,
@@ -381,4 +381,4 @@ var countries = {
       "Date": "2020-05-13T20:24:25Z"
     }
 ]
-}
+};

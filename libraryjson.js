@@ -1,4 +1,4 @@
-var libraries = {
+const libraries = {
     "kind": "books#volumes",
     "totalItems": 421,
     "items": [
