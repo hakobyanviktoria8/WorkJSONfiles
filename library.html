@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .card{
+            border: 1px solid;
+            width: 200px;
+            overflow: auto;
+            height: 350px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Library</h1>
+<div id="bigDiv"></div>
+
+<script src="libraryjson.js"></script>
+<script>
+    let arr = libraries.items;
+    arr.map(book =>
+        bigDiv.innerHTML += `
+            <div class="card">
+              <h2>${book.volumeInfo.title}</h2>
+              <h4>${book.volumeInfo.authors}</h4>
+              <a href="${book.volumeInfo.infoLink}"><img src="${book.volumeInfo.imageLinks.smallThumbnail}" alt=""></a>
+              <p>${book.volumeInfo.pageCount}</p>
+              <p>${book.volumeInfo.publishedDate}</p>
+              <p>${book.searchInfo.textSnippet}</p>
+            </div>
+    `
+    );
+</script>
+</body>
+</html>

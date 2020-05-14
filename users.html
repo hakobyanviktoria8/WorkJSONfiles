@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        .card{
+            text-align: center;
+            border: 1px solid;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+
+        }
+        .bigcard{
+            display: inline-block;
+            width: 250px;
+            height: 330px;
+            border: 2px solid red;
+        }
+        h4{
+            font-size: 1rem;
+        }
+        h2{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Users</h1>
+<div id="bigDiv"></div>
+
+<script src="users.js"></script>
+<script>
+    console.log(users);
+    users.map(user =>
+        bigDiv.innerHTML += `
+          <div class="bigcard">
+            <div class="card">
+              <p>${user.name}</p>
+              <p>${user.username}</p>
+              <p>${user.website}</p>
+              <p>${user.phone}</p>
+              <p>${user.address.city} ${user.address.street} ${user.address.suite}</p>
+              <p>${user.company.name}</p>
+            </div>
+          </div>
+    `
+    );
+</script>
+</body>
+</html>

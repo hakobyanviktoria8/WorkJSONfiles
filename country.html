@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 35px;
+        }
+
+        table,td{
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        th{
+            text-align: left;
+            padding: 12px;
+            font-size: 25px;
+            background-color: #9e9e9e78;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>Countries</h1>
+<div id="divTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Country</th>
+                <th>NewConfirmed</th>
+                <th>NewRecovered</th>
+                <th>NewDeaths</th>
+                <th>TotalConfirmed</th>
+                <th>TotalRecovered</th>
+                <th>TotalDeaths</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
+
+<script src="countryjson.js"></script>
+<script>
+    console.log(countries.Countries);
+    let arr = countries.Countries;
+    arr.map(country =>
+        tbody.innerHTML += `
+            <tr>
+                <td>${country.CountryCode}</td>
+                <td>${country.Country}</td>
+                <td>${country.NewConfirmed}</td>
+                <td>${country.NewRecovered}</td>
+                <td>${country.NewDeaths}</td>
+                <td>${country.TotalConfirmed}</td>
+                <td>${country.TotalRecovered}</td>
+                <td>${country.TotalDeaths}</td>
+                <td>${country.Date}</td>
+            </tr>
+    `
+    );
+
+</script>
+</body>
+</html>
