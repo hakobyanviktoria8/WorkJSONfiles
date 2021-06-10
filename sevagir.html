@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="covid.js"></script>
+<script>
+    let obj ={};
+    // console.log(newArr);
+    // console.log(newArr.map(x=>x.countryRegion));
+    newArr.map(x=>!obj.hasOwnProperty(x.countryRegion) ?
+        obj[x.countryRegion]= [x]: obj[x.countryRegion].push(x));
+    let newObj = Object.values(obj);
+    // console.log(newObj);
+    console.log(newObj.map(x => x.length === 1 ? x :
+        [{
+        confirmed : x.map(c => c.confirmed).reduce((a,b)=>a+b),
+        recovered :  x.map(c => c.recovered).reduce((a,b)=>a+b),
+        active :  x.map(c => c.active).reduce((a,b)=>a+b),
+        deaths :  x.map(c => c.deaths).reduce((a,b)=>a+b),
+    }])
+    );
+
+    // let confirmed = obj["US"].map(x=>x.confirmed).reduce((a,b)=>a+b);
+    // let deaths = obj["US"].map(x=>x.deaths).reduce((a,b)=>a+b);
+    // let active = obj["US"].map(x=>x.active).reduce((a,b)=>a+b);
+    // let recovered = obj["US"].map(x=>x.recovered).reduce((a,b)=>a+b);
+
+    // console.log("confirmed - " + confirmed);
+    // console.log("deaths - " + deaths);
+    // console.log("active - " + active);
+    // console.log("recovered - " + recovered);
+
+
+
+
+</script>
+
+
+
+<script>
+    // let obj={};
+    // let arr=[
+    //     {a:1},
+    //     {a:2},
+    //     {a:3},
+    //     {a:1},
+    //     {a:9},
+    //     {a:3},
+    //     {a:4},
+    //     {a:1},
+    //     {a:8},
+    //     {a:7},
+    //     {a:2},
+    //     {a:7},
+    //     {a:4},
+    //     {a:8},
+    // ];
+    // arr.map(x=>!obj.hasOwnProperty(x.a) ? obj[x.a]= [x]: obj[x.a].push(x));
+// console.log(obj);
+
+</script>
+
+</body>
+</html>
